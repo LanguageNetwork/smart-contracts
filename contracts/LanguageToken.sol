@@ -9,7 +9,7 @@ import "./zeppelin-solidity/token/ERC20/MintableToken.sol";
 
 contract LanguageToken is MintableToken {
 
-  string public constant name = "Language Token";
+  string public constant name = "The Language Token";
   string public constant symbol = "LANG";
   uint8 public constant decimals = 18;
 

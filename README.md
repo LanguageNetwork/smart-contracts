@@ -1,6 +1,8 @@
 # smart-contracts
 
-smart contracts for Language Token (LANG)
+smart contracts for The Language Token 
+
+[ Symbol: **LANG**  ]
 
 - TBA details 
 
@@ -11,7 +13,6 @@ smart contracts for Language Token (LANG)
 ```sh
 git clone https://github.com/LanguageToken/smart-contracts.git
 cd smart-contracts
-
 ```
 
 #### Installing
@@ -25,14 +26,17 @@ npm install
 
 ```sh
 truffle test
+truffle compile [--all] [--network <name>]
+truffle migrate [--reset] [-f <number>] [--network <name>] [--compile-all] [--verbose-rpc]
 ```
 
 
 
-# References
+# License
 
-- [OpenZeppelin/zeppelin-solidity](https://github.com/OpenZeppelin/zeppelin-solidity)
+Code released under the [GPLv3 License](https://github.com/LanguageToken/smart-contracts/blob/master/LICENSE).
 
-## License
+#### License and copyright notice
 
-Code released under the [MIT License](https://github.com/LanguageToken/smart-contracts/blob/master/LICENSE).
+- [OpenZeppelin/zeppelin-solidity](https://github.com/OpenZeppelin/zeppelin-solidity) [[MIT]](https://github.com/OpenZeppelin/zeppelin-solidity/blob/master/LICENSE).
+
