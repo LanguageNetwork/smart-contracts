@@ -1,6 +1,6 @@
 # smart-contracts
 
-smart contracts for The Language Token 
+smart contracts for Token of LangNet ( The Language Network )
 
 [ Symbol: **LANG**  ]
 
