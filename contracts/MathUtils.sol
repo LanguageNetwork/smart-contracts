@@ -1,6 +1,9 @@
-pragma solidity ^0.4.21;
+pragma solidity ^0.4.23;
 
-// copyright, LanguageNetwork, https://github.com/LanguageNetwork/smart-contracts
+/* from https://github.com/LanguageNetwork/smart-contracts
+* @title MathUtils
+* @author dongsamb, LangNet.io
+*/
 
 library MathUtils {
 
