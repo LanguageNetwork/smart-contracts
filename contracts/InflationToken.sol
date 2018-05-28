@@ -24,7 +24,7 @@ contract InflationToken is StandardToken {
     event Inflation(uint256 indexed inflationCount, address indexed inflationCaller, uint256 totalSpply, uint256 inflationValue, uint256 inflationTime);
 
     // start time
-    function InflationToken(uint256 _annualInflationRate, uint256 _inflationPeriod, uint8 _decimals, uint256 _inflationStartTime, uint256 _inflationCallRewardAmount) public {
+    constructor(uint256 _annualInflationRate, uint256 _inflationPeriod, uint8 _decimals, uint256 _inflationStartTime, uint256 _inflationCallRewardAmount) public {
 
         decimals = _decimals;
         
@@ -33,7 +33,7 @@ contract InflationToken is StandardToken {
             _annualInflationRate = 3 * (10 ** uint256(decimals));  // default, annual 3% inflation
         }
         if ( _inflationPeriod == 0 ){
-             _inflationPeriod = 7 * (60 * 60 * 24);  // default, weekly
+            _inflationPeriod = 7 * (60 * 60 * 24);  // default, weekly
 //            _inflationPeriod = 10;  // default, weekly
         }
         if ( _inflationStartTime == 0 ){
@@ -108,19 +108,4 @@ contract InflationToken is StandardToken {
 //        _inflationCallRewardAmount;
 //    }
 
-}
-
-contract LanguageToken is InflationToken {
-    string public constant name = "Language Token";
-    string public constant symbol = "LANG";
-    uint8 public constant decimals = 18;
-    //uint256 public constant INITIAL_SUPPLY = 10000 * (10 ** uint256(decimals));
-    uint256 public constant INITIAL_SUPPLY = 4000000000 * (10 ** uint256(decimals));
-
-    function LanguageToken(uint256 _annualInflationRate, uint256 _inflationPeriod, uint256 _inflationStartTime, uint256 _inflationCallRewardAmount) public
-    InflationToken(_annualInflationRate, _inflationPeriod, decimals, _inflationStartTime, _inflationCallRewardAmount) {
-        totalSupply_ = INITIAL_SUPPLY;
-        balances[msg.sender] = INITIAL_SUPPLY;
-        emit Transfer(0x0, msg.sender, INITIAL_SUPPLY);
-    }
 }

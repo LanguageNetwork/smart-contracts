@@ -2,13 +2,17 @@ pragma solidity ^0.4.23;
 
 import "./openzeppelin-solidity/contracts/crowdsale/validation/CappedCrowdsale.sol";
 import "./openzeppelin-solidity/contracts/crowdsale/distribution/RefundableCrowdsale.sol";
+import "./openzeppelin-solidity/contracts/crowdsale/validation/WhitelistedCrowdsale.sol";
+import "./LanguageToken.sol";
 
-contract LanguageTokenICO is CappedCrowdsale, RefundableCrowdsale {
-    function LanguageTokenICO(uint256 _rate, address _wallet, uint256 _cap, ERC20 _token, uint256 _goal) public
+contract LanguageTokenICO is CappedCrowdsale, RefundableCrowdsale, WhitelistedCrowdsale {
+    // uint256 _rate = 2; // test input, TBD
+    // address _wallet = msg.sender;
+    // ERC20 _token = new LanguageToken();
+    constructor(uint256 _rate, address _wallet, uint256 _cap, ERC20 _token, uint256 _goal) public
     Crowdsale(_rate, _wallet, _token)
     CappedCrowdsale(_cap)
-    RefundableCrowdsale(_goal)
-    {
+    RefundableCrowdsale(_goal) {
         // TBD the value to less or equal than a cap which is limit for accepted funds
         require(_goal <= _cap);
     }
