@@ -1,8 +1,9 @@
 pragma solidity ^0.4.23;
 
 import "./InflationToken.sol";
+import "./openzeppelin-solidity/contracts/token/ERC827/ERC827Token.sol";
 
-contract LanguageToken is InflationToken {
+contract LanguageToken is InflationToken, ERC827Token {
     string public constant name = "Language Token";
     string public constant symbol = "LANG";
     uint8 public constant decimals = 18;
