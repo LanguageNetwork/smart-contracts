@@ -1,9 +1,12 @@
-pragma solidity ^0.4.23;
-
-/* from https://github.com/LanguageNetwork/smart-contracts
+/* 
 * @title MathUtils
-* @author dongsamb, LangNet.io
+* @author dongsamb, LangNet.io (The Language Network)
+* @license GPL-3.0
+* @link https://github.com/LanguageNetwork/smart-contracts
+* @caution WIP, PoC version
 */
+
+pragma solidity ^0.4.23;
 
 library MathUtils {
 

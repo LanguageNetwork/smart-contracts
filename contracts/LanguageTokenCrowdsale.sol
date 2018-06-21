@@ -1,3 +1,11 @@
+/* 
+* @title LanguageTokenCrowdsale
+* @author dongsamb, LangNet.io (The Language Network)
+* @license GPL-3.0
+* @link https://github.com/LanguageNetwork/smart-contracts
+* @caution WIP, PoC version
+*/
+
 pragma solidity ^0.4.23;
 
 import "./openzeppelin-solidity/contracts/crowdsale/validation/CappedCrowdsale.sol";
@@ -5,7 +13,7 @@ import "./openzeppelin-solidity/contracts/crowdsale/distribution/RefundableCrowd
 import "./openzeppelin-solidity/contracts/crowdsale/validation/WhitelistedCrowdsale.sol";
 import "./LanguageToken.sol";
 
-contract LanguageTokenICO is CappedCrowdsale, RefundableCrowdsale, WhitelistedCrowdsale {
+contract LanguageTokenCrowdsale is CappedCrowdsale, RefundableCrowdsale, WhitelistedCrowdsale {
     // uint256 _rate = 2; // test input, TBD
     // address _wallet = msg.sender;
     // ERC20 _token = new LanguageToken();

@@ -1,3 +1,11 @@
+/* 
+* @title InflationToken
+* @author dongsamb, LangNet.io (The Language Network)
+* @license GPL-3.0
+* @link https://github.com/LanguageNetwork/smart-contracts
+* @caution WIP, PoC version
+*/
+
 pragma solidity ^0.4.23;
 
 import "./openzeppelin-solidity/contracts/token/ERC20/StandardToken.sol";
@@ -53,9 +61,7 @@ contract InflationToken is StandardToken {
     function inflate() private returns (bool _result){
         //uint256 inflation_value = totalSupply_.mul(periodicInflationRate_).div(10 ** (uint256(decimals)+2));
         uint256 inflation_value = totalSupply_.mul(periodicInflationRate).div(10 ** (uint256(decimals)+2));
-//        emit Logging(inflation_value);
         inflation_value = inflation_value.roundOff(decimals);
-//        emit Logging(inflation_value);
         totalSupply_ = totalSupply_.add(inflation_value);
         balances[this] = balances[this].add(inflation_value);
         inflationVault = inflationVault.add(inflation_value);
@@ -81,7 +87,7 @@ contract InflationToken is StandardToken {
     
     function nextInflationTime() public view returns (uint256) {
         return inflationStartTime.add((inflationCount+1).mul(inflationPeriod));
-        // Todo: Fix logic for changed InflationRate
+        // TODO: Fix logic for changed InflationRate
     }
 
     function periodicInflate() public returns (bool _result) {
@@ -96,7 +102,7 @@ contract InflationToken is StandardToken {
         return result;
     }
 
-//// Todo: need governance, DAO
+//// TODO: need governance, DAO
 //    function changeInflationPeriod(uint256 _inflationPeriod) internal returns (bool _result){
 //        inflationPeriod = _inflationPeriod;
 //    }

@@ -1,6 +1,6 @@
 /*
 Copyright 2017 OmiseGO Pte Ltd
-Edited version of https://github.com/omisego/airdrop
+Edited version of https://github.com/omisego/airdrop by LangNet.io
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
